@@ -10,6 +10,7 @@ import {
 
 } from "@mui/icons-material"
 import MenuIcon from "@mui/icons-material/Menu";
+import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 
 
 export default function DrawerMenu() {
@@ -39,7 +40,9 @@ export default function DrawerMenu() {
             </ListItemIcon>
             <ListItemText primary="Home" />
             </ListItemButton>
-          </ListItem> 
+          </ListItem>  
+            
+             
            
             <ListItem >
             <ListItemButton href="/pages/about" >
@@ -48,6 +51,16 @@ export default function DrawerMenu() {
               <AboutIcon />
             </ListItemIcon>
             <ListItemText primary="About" />
+            </ListItemButton>
+          </ListItem>  
+           
+           <ListItem >
+            <ListItemButton href="/pages/product" >
+
+            <ListItemIcon>
+              <AddShoppingCartOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary="Product" />
             </ListItemButton>
           </ListItem> 
            

@@ -25,6 +25,8 @@ import {
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import AccordionExpand from './AccoedialDash';
+import Barcharts from '@/app/charts/barchart';
 
 
 
@@ -48,7 +50,7 @@ export default function Homepage() {
     return (
         <Box sx={{ flexGrow: 1 }}>
 
-            <AppBar sx={{ bgcolor: "white", color: "black" }} position="static" >
+            <AppBar  elevation={0} sx={{ bgcolor : "#ffffff" , color : "#2f2f2f" }} position="static" >
                 <Toolbar>
                     <DrawerMenu />
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 30, ml: 2 }}>
@@ -124,7 +126,9 @@ export default function Homepage() {
                 </Toolbar>
             </AppBar>
             {/* Content */} 
-            <Box sx={{flexGrow : 1 , p : 5}}>
+            <Box sx={{flexGrow : 1 , p : 5 , height : "100vh",
+                 background: "linear-gradient(158deg, rgb(224,224,224) 0%, rgb(233,237,254) 100%)",
+            }}>
                 <Container maxWidth="lg">
 
             <Grid container spacing={2}>
@@ -139,7 +143,7 @@ export default function Homepage() {
                             <div>
                                 <CreditCardOutlinedIcon sx={{color : "aliceblue"}} />
                             </div>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography sx={{color : "#ffffff"}} gutterBottom variant="h5" component="div">
                                $500.00
                             </Typography>
                              <Typography gutterBottom variant="body2" component="div" sx={{color : "#ccd1d1"}}>
@@ -160,7 +164,7 @@ export default function Homepage() {
                              <div>
                               <ShoppingCartOutlinedIcon sx={{color : "aliceblue"}} />
                             </div>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography sx={{color : "#ffffff"}} gutterBottom variant="h5" component="div">
                                 $900.00
                             </Typography>
                              <Typography gutterBottom variant="body2" color='#ccd1d1' component="div">
@@ -183,7 +187,7 @@ export default function Homepage() {
                         
                              <Stack spacing={2} sx={{p : 1.5}} direction="row"  >
                              <div className='iconstyle'>
-                            <StorefrontTwoToneIcon sx={{color : "aliceblue"}} />
+                            <StorefrontTwoToneIcon  sx={{color : "aliceblue" , mt : 1 , ml : 1}} />
                              </div>
                             <div className='paddingall'> 
                            <span className='pricetitle'>$203k</span>
@@ -195,14 +199,14 @@ export default function Homepage() {
 
                     </Card> 
                       <Card sx={{ maxWidth: 345 , 
-                          background: "linear-gradient(158deg, rgba(53,138,148,1) 0%, rgba(91,180,96,1) 100%)",
+                         
 
                        }}>
                   
                            
                           <Stack sx={{p : 1.5}} spacing={2} direction="row"  >
                              <div className='iconstyle'>
-                            <StorefrontTwoToneIcon sx={{color : "aliceblue"}} />
+                            <StorefrontTwoToneIcon sx={{color : "#2f2f2f" , mt : 1 , ml : 1}} />
                              </div>
                             <div className='paddingall'> 
                            <span className='pricetitle'>$203k</span>
@@ -224,15 +228,19 @@ export default function Homepage() {
                     <Card sx={{height : 60 + "vh"}}>
 
                     <CardContent>
-                            
+                             <Barcharts />
                         </CardContent>
                     </Card>
                 </Grid>
                 <Grid size={4}>
-                            <Card sx={{height : 60 + "vh"}} >
+                            <Card sx={{height : 60 + "vh" , maxWidth : "350px"}} >
 
-                    <CardContent>
-                            
+                    <CardContent >
+                         <Box sx={{ p : 1}}>
+                            <Typography sx={{fontSize : 28}}>Popular Product</Typography>
+                         </Box>
+                        
+                            <AccordionExpand />
                         </CardContent> 
                         </Card>
                 </Grid>
